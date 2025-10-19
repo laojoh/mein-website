@@ -28,7 +28,7 @@ h1 {
 img {
     margin-left: 40px;
     max-width: 1000px;
-    height: auto;
+    height: 666.66px;
     border-radius: 30px;
 }
 
