@@ -4,6 +4,11 @@
 
 <style>
 
+:global(body) {
+    background-color: #f4ece5;
+    margin: 0;
+}
+
 @font-face {
     font-family: 'MyCustomFont';
     src: url('/fonts/Misha.otf') format('opentype');
