@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@font-face {
+    font-family: 'Misha';
+    src: url('/fonts/Misha.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme{
+    --color-bg: #F4ECE5;
+    --color-header: #52412A;
+    --font-header: 'Misha';
+}
