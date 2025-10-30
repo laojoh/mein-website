@@ -1,16 +1,9 @@
-<h1>Photography</h1>
-
-<style>
-:global(body) {
-    background-color: #f4ece5;
-    margin: 0;
-}
-
-h1 {
-    margin-left: 50px;
-    margin-top: 20px;
-    font-size: 75px ;
-    font-family: 'Misha';
-    color: #52412A;
-}
-</style>
+<div class = "bg-bg p-8">
+    <div class = "flex">
+        <nav class = "w-full flex flex-row justify-start gap-4 items-start">
+            <h1 class = "text-7xl text-header font-header uppercase"> <a href = "/photography"> Photography</a> </h1>
+            <h1 class = "text-xs text-header font-subheader uppercase"> <a href = "../"> By John Lao</a> </h1>
+        </nav>
+    </div>
+    <img class = "w-full" src = "/images/headphonecat.jpg" alt = "cat with headphones"/>
+</div>

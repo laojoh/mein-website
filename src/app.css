@@ -18,5 +18,9 @@
     --color-bg: #F4ECE5;
     --color-header: #52412A;
     --font-header: 'Chaviera';
-    --font-desc: 'LinearGrotesk';
+    --font-subheader: 'LinearGrotesk';
+}
+
+body {
+    @apply bg-bg;
 }
