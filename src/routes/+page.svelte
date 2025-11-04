@@ -3,7 +3,7 @@
         <nav class = " w-auto flex justify-start">
             <h1 class = "text-7xl text-header font-header uppercase"> <a href = "../">John Lao</a> </h1>
         </nav>
-        <comment>
+        <nav>
             <nav class = "flex flex-col gap-8 rotate-90 origin-top-left text-header font-header text-4xl uppercase absolute -right-90 top-10">
                 <div class = "flex w-100 gap-4 items-center">
                     <a href = "/photography">Photography</a>
@@ -18,6 +18,7 @@
                     <p class = "text-xs font-subheader">My contact information or where to find me</p>
                 </div>
             </nav>
-        </comment>
+        </nav>
     </div>
+    <img class = " w-4xl" src = "/images/placeholder images/placeholder1.jpg" alt = "cat with headphones"/>
 </div>
