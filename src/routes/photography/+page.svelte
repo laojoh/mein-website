@@ -24,32 +24,35 @@
   });
 </script>
 
-<div class = "bg-bg p-10">
+<div class = "bg-bg p-7 pl-15">
     <div class = "flex">
-        <nav class = "w-full flex flex-row justify-start gap-4 items-start">
-            <h1 class = "text-7xl text-header font-header uppercase"> <a href = "/photography"> Photography</a> </h1>
+        <!-- Header -->
+        <nav class = "w-full flex flex-row justify-start gap-4 items-start rounded-xl p-5">
+            <h1 class = "text-8xl text-header font-header uppercase"> <a href = "/photography"> Photography</a> </h1>
             <h1 class = "text-xs text-header font-subheader uppercase"> <a href = "../"> By John Lao</a> </h1>
         </nav>
-        <nav class = "flex flex-col gap-8 origin-top-left rotate-90 text-header font-header text-7xl uppercase absolute top-28 -right-75">
-            <div class = "flex w-100 gap-4 items-center">
+        <!-- Menu -->
+        <nav class = "flex flex-col gap-10 origin-top-left rotate-90 text-header font-header text-5xl uppercase absolute top-34 -right-60 rounded-xl p-5">
+            <div class = "flex w-full gap-7 items-center">
                 <a href = "/portfolio">Portfolio</a>
-                <a class = "text-xs font-subheader" href = "/portfolio">My photography projects</a>
+                <a class = "text-xs font-subheader -rotate-90 w-10" href = "/portfolio">My photo projects</a>
             </div>
-            <div class = "flex gap-4 items-center">
-                <a class = "w-80"href = "/../about">A Glimpse</a>
-                <p class = "text-xs font-subheader w-15">A little about me</p>
+            <div class = "flex gap-7 items-center w-full">
+                <a href = "/../aboutphoto">A Glimpse</a>
+                <p class = "text-xs font-subheader -rotate-90 w-10">A little about me</p>
             </div>
-            <div class = "flex w-80 gap-4 items-center">
+            <div class = "flex w-full gap-7 items-center">
                 <a href = "/contact">Contact</a>
-                <p class = "text-xs font-subheader">Where to find me</p>
+                <p class = "text-xs font-subheader -rotate-90 w-10">Where to find me</p>
           </div>
-          <div class = "flex w-90 gap-4 items-center">
+          <div class = "flex w-full gap-7 items-center">
                 <a href = "/contact">Services</a>
-                <p class = "text-xs font-subheader">What I can do for you</p>
+                <p class = "text-xs font-subheader -rotate-90 w-10">What I can do for you</p>
             </div>
         </nav>
     </div>
-    <div class="relative w-212.5 aspect-5/4 overflow-hidden bg-imagebg rounded-xl">
+    <!-- Slideshow -->
+    <div class="relative w-212 aspect-5/4 overflow-hidden bg-imagebg rounded-xl">
         {#each images as src, i}
             <img
               src={src}

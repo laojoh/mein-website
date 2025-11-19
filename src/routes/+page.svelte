@@ -4,7 +4,7 @@
             <h1 class = " text-7xl text-header font-header uppercase"> <a href = "../">John Lao</a> </h1>
         </nav>
         <nav>
-            <nav class = "flex flex-col gap-8 rotate-90 origin-top-left text-header font-header text-4xl uppercase absolute -right-90 top-10">
+            <nav class = "flex flex-col gap-8 origin-top-left rotate-90 text-header font-header text-7xl uppercase absolute top-28 -right-75">
                 <div class = "flex w-100 gap-4 items-center">
                     <a href = "/photography">Photography</a>
                     <a class = "text-xs font-subheader" href = "/photography">My photography projects</a>

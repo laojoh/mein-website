@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+@theme{
+    --color-bg: #F4ECE5;
+    --color-header: #52412A;
+    --color-border: #876F5B;
+    --color-something: #B5B79D;
+    --color-imagebg: #D9CFC1;
+    --font-header: 'Chaviera';
+    --font-subheader: 'LinearGrotesk';
+}
+
 @font-face {
     font-family: 'Chaviera';
     src: url('/fonts/Chaviera.otf') format('opentype');
@@ -14,13 +24,6 @@
     font-style: bold;
 }
 
-@theme{
-    --color-bg: #F4ECE5;
-    --color-header: #52412A;
-    --color-imagebg: #D9CFC1;
-    --font-header: 'Chaviera';
-    --font-subheader: 'LinearGrotesk';
-}
 
 body {
     @apply bg-bg;
