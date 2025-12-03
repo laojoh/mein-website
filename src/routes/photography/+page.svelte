@@ -2,12 +2,12 @@
   import { onMount, onDestroy } from "svelte";
 
   let images: string[] = [
-    "/images/placeholder images/placeholder1.jpg",
-    "/images/placeholder images/placeholder2.jpg",
-    "/images/placeholder images/placeholder3.jpg",
-    "/images/placeholder images/placeholder4.jpg",
-    "/images/placeholder images/placeholder5.jpg",
-    "/images/placeholder images/placeholder6.jpg",
+    "/images/photo home/img1.jpg",
+    "/images/photo home/img2.jpg",
+    "/images/photo home/img3.jpg",
+    "/images/photo home/img4.jpg",
+    "/images/photo home/img5.jpg",
+    "/images/photo home/img6.jpg",
   ];
 
   let index = 0;
@@ -50,6 +50,8 @@
                 <p class = "text-xs font-subheader -rotate-90 w-10">What I can do for you</p>
             </div>
         </nav>
+        <!-- Seal -->
+        <img class = "w-50 h-50 object-contain absolute right-47.5 top-140" src = "/images/favicon.svg" alt = "Photography Logo Seal"/>
     </div>
     <!-- Slideshow -->
     <div class="relative w-212 aspect-5/4 overflow-hidden bg-imagebg rounded-xl">
@@ -63,4 +65,5 @@
             />
         {/each}
     </div>
+
 </div>

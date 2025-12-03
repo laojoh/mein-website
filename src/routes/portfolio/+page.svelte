@@ -33,7 +33,7 @@
             <a class = "block relative overflow-hidden group w-100 rounded-xl" href = "/street">
                 <img class = " w-100 aspect-square object-cover transition-transform duration-500 group-hover:scale-110" loading = "lazy" src = "/images/portfolio thumbs/Street thumb.jpg" alt = "Street Photography Thumbnail"/>
                 <div class = " absolute inset-0 bg-imagebg opacity-15 group-hover:opacity-0 transition-opacity duration-300 rounded-xl"></div>
-                <p class  = "text-4xl font-subheader font-bold text-white absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">PHOTOGRAPHY</p>
+                <p class  = "text-4xl font-subheader font-bold text-white absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">STREET</p>
             </a>
         </nav>
     </div>
