@@ -1,7 +1,10 @@
 <script lang="ts">
-	import B2Port from "$lib/components/B2Port.svelte";
     import Header from "$lib/components/Header.svelte";
+    import B2Port from "$lib/components/B2Port.svelte";
     import { onMount } from "svelte";
+    import Lightbox from "$lib/components/Lightbox.svelte";
+    import TypeWrite from "$lib/components/TypeWriter.svelte";
+    import { TypeWriter } from "svelte-typewrite";
 
 	let zoom = 1;
 	let originX = "50%";
@@ -62,33 +65,28 @@
 	});
 </script>
 
-
-<div class="bg-bg p-7 pl-15">
+<div class = "bg-bg p-7 pl-15">
     <Header/>
-
     <nav class="grid grid-cols-6 grid-auto-rows gap-10 p-5">
         <B2Port/>
-        <div class="col-start-5 col-span-2 row-start-2 text-header font-subheader">
-            <h2 class="text-3xl">Project Background</h2>
+        <div class="col-start-5 col-span-2 row-start-4 text-header font-subheader">
+            <h2 class="text-3xl">
+                <TypeWrite text="Project Background"/>
+            </h2>
             <p class="text-xl">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+                <TypeWriter texts={["Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque."]} repeat={1} typeSpeed={15} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
             </p>
         </div>
 
-        <p class="text-xl col-start-1 col-span-3 row-start-7 row-span-2">
+        <p class="text-xl col-start-4 col-span-3 row-start-7 row-span-2">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
         </p>
 
-        <img class="zoomable col-start-3 col-span-2 row-start-1 row-span-3 rounded-xl" src="/images/china/china1.jpg" alt="" />
-        <img class="zoomable col-start-2 col-span-4 row-start-4 row-span-2 rounded-xl" src="/images/china/china2.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-3 row-start-6 row-span-2 rounded-xl" src="/images/china/china3.jpg" alt="" />
-        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-2 rounded-xl" src="/images/china/china4.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-2 row-start-8 row-span-2 rounded-xl" src="/images/china/china5.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-3 row-start-1 row-span-4 rounded-xl" src="/images/automotive/automotive1.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-2 row-start-7 row-span-2 rounded-xl" src="/images/automotive/automotive2.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-3 row-start-5 row-span-2 rounded-xl" src="/images/automotive/automotive3.jpg" alt="" />
+        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-2 rounded-xl" src="/images/automotive/automotive4.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-2 row-start-9 row-span-2 rounded-xl" src="/images/automotive/automotive5.jpg" alt="" />
     </nav>
-
-    <!-- Lightbox Overlay -->
-    <div id="lightbox"
-        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-        <img id="lightbox-img" class="max-w-[90vw] max-h-[90vh] rounded-xl shadow-xl" src="" alt="" />
-    </div>
+    <Lightbox/>
 </div>

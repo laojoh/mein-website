@@ -1,6 +1,6 @@
 <script lang="ts">
+  import TypeWriter from "$lib/components/TypeWriter.svelte";
   import { onMount, onDestroy } from "svelte";
-  import { TypeWriter } from 'svelte-typewrite'
 
   let images: string[] = [
     "/images/photo home/img1.jpg",
@@ -31,45 +31,45 @@
         <nav class = "w-full flex flex-row justify-start gap-4 items-start rounded-xl p-5">
             <a href="/photography">
               <div class = "text-8xl text-header font-header uppercase">
-                <TypeWriter texts={['photography']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                <TypeWriter text = "Photography"/>
               </div>
             </a>
             <h1 class = "text-xs text-header font-subheader uppercase"> <a href = "../">
-            <TypeWriter texts={['By John Lao']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+            <TypeWriter text = "By John Lao"/>
             </a> </h1>
         </nav>
         <!-- Menu -->
         <nav class = "flex flex-col gap-10 origin-top-left rotate-90 text-header font-header text-5xl uppercase absolute top-34 -right-60 rounded-xl p-5">
             <div class = "flex w-full gap-7 items-center">
-                <a href = "/portfolio">
-                  <TypeWriter texts={['portfolio']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                <a href = "photography/portfolio">
+                  <TypeWriter text = "portfolio"/>
                 </a>
                 <a class = "text-xs font-subheader -rotate-90 w-10 text-center" href = "/portfolio">
-                  <TypeWriter texts={['my photo projects']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                  <!-- <TypeWriter text = "my photo projects"/> --> My photo projects
                 </a>
             </div>
             <div class = "flex gap-7 items-center w-full">
-                <a href = "/../aboutphoto">
-                  <TypeWriter texts={['A Glimpse']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                <a href = "photography/aboutphoto">
+                  <TypeWriter text = "A Glimpse"/>
                 </a>
                 <p class = "text-xs font-subheader -rotate-90 w-10 text-center">
-                  <TypeWriter texts={['A little about me']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                  <!-- <TypeWriter text = "A little about me"/> --> A little about me
                 </p>
             </div>
             <div class = "flex w-full gap-7 items-center">
-                <a href = "/contact">
-                  <TypeWriter texts={['Contact']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                <a href = "photography/contact">
+                  <TypeWriter text = "Contact"/>
                 </a>
                 <p class = "text-xs font-subheader -rotate-90 w-10 text-center">
-                  <TypeWriter texts={['Where to find me']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                  <!-- <TypeWriter text = "Where to find me"/> --> Where to find me
                 </p>
           </div>
           <div class = "flex w-full gap-3 items-center">
-                <a href = "/contact">
-                  <TypeWriter texts={['Services']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                <a href = "photography/contact">
+                  <TypeWriter text = "Services"/>
                 </a>
                 <p class = "text-xs font-subheader -rotate-90 w-10 text-center">
-                  <TypeWriter texts={['For you']} repeat={1} typeSpeed={120} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
+                  <!-- <TypeWriter text = "For you"/> --> For you
                 </p>
             </div>
         </nav>
