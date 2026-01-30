@@ -5,6 +5,7 @@
     import Lightbox from "$lib/components/Lightbox.svelte";
     import TypeWrite from "$lib/components/TypeWriter.svelte";
     import { TypeWriter } from "svelte-typewrite";
+    import Preload from "$lib/components/Preload.svelte";
 
 	let zoom = 1;
 	let originX = "50%";
@@ -64,6 +65,8 @@
         });
 	});
 </script>
+
+<Preload path = "/images/automotive/automotive1.jpg"/>
 
 <div class = "bg-bg p-7 pl-15">
     <Header/>

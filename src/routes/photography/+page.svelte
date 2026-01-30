@@ -17,7 +17,7 @@
   onMount(() => {
     interval = setInterval(() => {
       index = (index + 1) % images.length;
-    }, 3500); // every 3.5 seconds
+    }, 5000); // every 5 seconds
   });
 
   onDestroy(() => {
@@ -28,7 +28,7 @@
 <div class = "bg-bg p-7 pl-15">
     <div class = "flex">
         <!-- Header -->
-        <nav class = "w-full flex flex-row justify-start gap-4 items-start rounded-xl p-5">
+        <nav class = "w-full flex flex-row justify-start gap-4 items-start p-5">
             <a href="/photography">
               <div class = "text-8xl text-header font-header uppercase">
                 <TypeWriter text = "Photography"/>
@@ -39,7 +39,7 @@
             </a> </h1>
         </nav>
         <!-- Menu -->
-        <nav class = "flex flex-col gap-10 origin-top-left rotate-90 text-header font-header text-5xl uppercase absolute top-34 -right-60 rounded-xl p-5">
+        <nav class = "flex flex-col gap-10 origin-top-left rotate-90 text-header font-header text-5xl uppercase absolute top-34 -right-60 p-5">
             <div class = "flex w-full gap-7 items-center">
                 <a href = "photography/portfolio">
                   <TypeWriter text = "portfolio"/>
@@ -77,7 +77,7 @@
         <img class = "w-50 h-50 object-contain absolute right-47.5 top-140" src = "/images/favicon.svg" alt = "Photography Logo Seal"/>
     </div>
     <!-- Slideshow -->
-    <div class="relative w-212 aspect-5/4 overflow-hidden bg-imagebg rounded-xl">
+    <div class="relative w-212 aspect-5/4 overflow-hidden bg-imagebg">
         {#each images as src, i}
             <img
               src={src}

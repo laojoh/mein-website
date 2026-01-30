@@ -5,6 +5,7 @@
     import TypeWrite from "$lib/components/TypeWriter.svelte";
     import { TypeWriter } from "svelte-typewrite";
     import { onMount } from "svelte";
+    import Preload from "$lib/components/Preload.svelte";
 
 	let zoom = 1;
 	let originX = "50%";
@@ -65,6 +66,7 @@
 	});
 </script>
 
+<Preload path = "/images/china/china1.jpg"/>
 
 <div class="bg-bg p-7 pl-15">
     <Header/>
@@ -83,11 +85,11 @@
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
         </p>
         
-        <img class="zoomable col-start-3 col-span-2 row-start-1 row-span-3 rounded-xl" src="/images/china/china1.jpg" alt="" />
-        <img class="zoomable col-start-2 col-span-4 row-start-4 row-span-2 rounded-xl" src="/images/china/china2.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-3 row-start-6 row-span-2 rounded-xl" src="/images/china/china3.jpg" alt="" />
-        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-4 rounded-xl" src="/images/china/china4.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-3 row-start-10 row-span-2 rounded-xl" src="/images/china/china5.jpg" alt="" />
+        <img class="zoomable col-start-3 col-span-2 row-start-1 row-span-3" src="/images/china/china1.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-4 row-start-4 row-span-2" src="/images/china/china2.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-3 row-start-6 row-span-2" src="/images/china/china3.jpg" alt="" />
+        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-4" src="/images/china/china4.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-3 row-start-10 row-span-2" src="/images/china/china5.jpg" alt="" />
     </nav>
     <Lightbox/>
 </div>
