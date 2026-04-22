@@ -3,7 +3,7 @@
 @theme{
     --color-bg: #F4ECE5;
     --color-header: #52412A;
-    --color-border: #876F5B;
+    --color-shadow: #876F5B;
     --color-something: #B5B79D;
     --color-imagebg: #D9CFC1;
     --font-header: 'Chaviera';
@@ -28,3 +28,8 @@
 body {
     @apply bg-bg;
 }
+
+* {
+    cursor: none;
+}
+

@@ -12,7 +12,7 @@
   ];
 
   let index = 0;
-  let interval: number;
+  let interval: ReturnType<typeof setInterval>;
 
   onMount(() => {
     interval = setInterval(() => {
@@ -28,9 +28,9 @@
 <div class = "bg-bg p-7 pl-15">
     <div class = "flex">
         <!-- Header -->
-        <nav class = "w-full flex flex-row justify-start gap-4 items-start p-5">
+        <nav class = "w-full flex flex-row justify-start gap-4 items-start p-5 ">
             <a href="/photography">
-              <div class = "text-8xl text-header font-header uppercase">
+              <div class = "text-7xl text-header font-header uppercase">
                 <TypeWriter text = "Photography"/>
               </div>
             </a>
@@ -40,7 +40,8 @@
         </nav>
         <!-- Menu -->
         <nav class = "flex flex-col gap-10 origin-top-left rotate-90 text-header font-header text-5xl uppercase absolute top-34 -right-60 p-5">
-            <div class = "flex w-full gap-7 items-center">
+        <!-- Portfolio -->
+            <div class = "flex w-full gap-7 items-center group cursor-pointer transition-transform duration-300 hover:scale-110">
                 <a href = "photography/portfolio">
                   <TypeWriter text = "portfolio"/>
                 </a>
@@ -48,7 +49,8 @@
                   <!-- <TypeWriter text = "my photo projects"/> --> My photo projects
                 </a>
             </div>
-            <div class = "flex gap-7 items-center w-full">
+        <!-- About -->
+            <div class = "flex gap-7 items-center w-full group cursor-pointer transition-transform duration-300 hover:scale-110">
                 <a href = "photography/aboutphoto">
                   <TypeWriter text = "A Glimpse"/>
                 </a>
@@ -56,7 +58,8 @@
                   <!-- <TypeWriter text = "A little about me"/> --> A little about me
                 </p>
             </div>
-            <div class = "flex w-full gap-7 items-center">
+        <!-- Contact -->
+            <div class = "flex w-full gap-7 items-center group cursor-pointer transition-transform duration-300 hover:scale-110">
                 <a href = "photography/contact">
                   <TypeWriter text = "Contact"/>
                 </a>
@@ -64,7 +67,8 @@
                   <!-- <TypeWriter text = "Where to find me"/> --> Where to find me
                 </p>
           </div>
-          <div class = "flex w-full gap-3 items-center">
+        <!-- Sevices -->
+          <div class = "flex w-full gap-3 items-center group cursor-pointer transition-transform duration-300 hover:scale-110">
                 <a href = "photography/contact">
                   <TypeWriter text = "Services"/>
                 </a>
@@ -78,16 +82,16 @@
     </div>
     <!-- Slideshow -->
     <div class="relative w-212 aspect-5/4 overflow-hidden bg-imagebg">
-        {#each images as src, i}
-            <img
-              src={src}
-              alt=""
-              class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              i === index ? "opacity-100" : "opacity-0"
-            }`}
-            />
-        {/each}
-    </div>
+    {#each images as src, i}
+      <img
+        src={src}
+        alt=""
+        class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+        i === index ? "opacity-100" : "opacity-0"
+      }`}
+      />
+    {/each}
+</div>
 
 
 </div>

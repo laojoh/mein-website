@@ -76,7 +76,7 @@
             <h2 class="text-3xl">
                 <TypeWrite text="Project Background"/>
             </h2>
-            <p class="text-xl">
+            <p class="text-md">
                 <TypeWriter texts={["Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque."]} repeat={1} typeSpeed={15} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
             </p>
         </div>
@@ -85,11 +85,11 @@
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
         </p>
 
-        <img class="zoomable col-start-2 col-span-3 row-start-1 row-span-4 rounded-xl" src="/images/automotive/automotive1.jpg" alt="" />
-        <img class="zoomable col-start-2 col-span-2 row-start-7 row-span-2 rounded-xl" src="/images/automotive/automotive2.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-3 row-start-5 row-span-2 rounded-xl" src="/images/automotive/automotive3.jpg" alt="" />
-        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-2 rounded-xl" src="/images/automotive/automotive4.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-2 row-start-9 row-span-2 rounded-xl" src="/images/automotive/automotive5.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-3 row-start-1 row-span-4 " src="/images/automotive/automotive1.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-2 row-start-7 row-span-2 " src="/images/automotive/automotive2.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-3 row-start-5 row-span-2 " src="/images/automotive/automotive3.jpg" alt="" />
+        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-2 " src="/images/automotive/automotive4.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-2 row-start-9 row-span-2 " src="/images/automotive/automotive5.jpg" alt="" />
     </nav>
     <Lightbox/>
 </div>

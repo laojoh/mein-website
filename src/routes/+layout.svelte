@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { onNavigate } from '$app/navigation';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+	import Cursor from '$lib/components/Cursor.svelte';
 
 	injectSpeedInsights();
 
@@ -19,6 +20,8 @@
 	
 	let { children } = $props();
 </script>
+
+<Cursor/>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
