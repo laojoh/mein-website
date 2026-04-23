@@ -28,11 +28,11 @@
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
         </p>
         
-        <img class = "zoomable col-start-3 col-span-2 row-start-1 row-span-3" src="/images/china/china1.jpg" alt="" />
-        <img class = "zoomable col-start-2 col-span-4 row-start-4 row-span-2" src="/images/china/china2.jpg" alt="" />
-        <img class = "zoomable col-start-1 col-span-3 row-start-6 row-span-2" src="/images/china/china3.jpg" alt="" />
-        <img class = "zoomable col-start-4 col-span-3 row-start-6 row-span-4" src="/images/china/china4.jpg" alt="" />
-        <img class = "zoomable col-start-1 col-span-3 row-start-10 row-span-2" src="/images/china/china5.jpg" alt="" />
+        <img class = "zoomable col-start-3 col-span-2 row-start-1 row-span-3" src="/images/china/display/china1.jpg" data-full="/images/china/full/china1.jpg" alt="" />
+        <img class = "zoomable col-start-2 col-span-4 row-start-4 row-span-2" src="/images/china/display/china2.jpg" data-full="/images/china/full/china2.jpg" alt="" />
+        <img class = "zoomable col-start-1 col-span-3 row-start-6 row-span-2" src="/images/china/display/china3.jpg" data-full="/images/china/full/china3.jpg" alt="" />
+        <img class = "zoomable col-start-4 col-span-3 row-start-6 row-span-4" src="/images/china/display/china4.jpg" data-full="/images/china/full/china4.jpg" alt="" />
+        <img class = "zoomable col-start-1 col-span-3 row-start-10 row-span-2" src="/images/china/display/china5.jpg" data-full="/images/china/full/china5.jpg" alt="" />
     </nav>
     <Lightbox/>
 </div>

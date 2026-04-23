@@ -20,7 +20,9 @@
 				lightboxImg.style.transform = "scale(1)";
 				lightboxImg.style.transformOrigin = "50% 50%";
 
-				lightboxImg.src = img.src;
+				const full = img.dataset.full;
+				lightboxImg.src = full ? full : img.src;
+				
 				lightbox.classList.remove("hidden");
 			});
 		});
