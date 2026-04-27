@@ -85,11 +85,11 @@
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
         </p>
 
-        <img class="zoomable col-start-2 col-span-3 row-start-1 row-span-4 " src="/images/automotive/automotive1.jpg" alt="" />
-        <img class="zoomable col-start-2 col-span-2 row-start-7 row-span-2 " src="/images/automotive/automotive2.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-3 row-start-5 row-span-2 " src="/images/automotive/automotive3.jpg" alt="" />
-        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-2 " src="/images/automotive/automotive4.jpg" alt="" />
-        <img class="zoomable col-start-1 col-span-2 row-start-9 row-span-2 " src="/images/automotive/automotive5.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-3 row-start-1 row-span-4 " src="/images/automotive/display/automotive1.jpg" data-full = "/images/automotive/full/automotive1.jpg" alt="" />
+        <img class="zoomable col-start-2 col-span-2 row-start-7 row-span-2 " src="/images/automotive/display/automotive2.jpg" data-full = "/images/automotive/full/automotive2.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-3 row-start-5 row-span-2 " src="/images/automotive/display/automotive3.jpg" data-full = "/images/automotive/full/automotive3.jpg" alt="" />
+        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-2 " src="/images/automotive/display/automotive4.jpg" data-full = "/images/automotive/full/automotive4.jpg" alt="" />
+        <img class="zoomable col-start-1 col-span-2 row-start-9 row-span-2 " src="/images/automotive/display/automotive5.jpg" data-full = "/images/automotive/full/automotive5.jpg" alt="" />
     </nav>
     <Lightbox/>
 </div>

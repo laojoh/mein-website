@@ -51,7 +51,7 @@
             </div>
         <!-- About -->
             <div class = "flex gap-7 items-center w-full group cursor-pointer transition-transform duration-300 hover:scale-110">
-                <a href = "photography/aboutphoto">
+                <a href = "photography/about">
                   <TypeWriter text = "A Glimpse"/>
                 </a>
                 <p class = "text-xs font-subheader -rotate-90 w-10 text-center">
