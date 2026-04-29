@@ -1,5 +1,5 @@
 <script>
-    import B2Port from "$lib/components/B2Port.svelte";
+    import B2Port from "$lib/components/Back.svelte";
     import Header from "$lib/components/Header.svelte";
 
 </script>

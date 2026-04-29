@@ -8,6 +8,7 @@
     --color-imagebg: #D9CFC1;
     --font-header: 'Chaviera';
     --font-subheader: 'LinearGrotesk';
+    --font-body: 'InterTight';
 }
 
 @font-face {
@@ -22,6 +23,12 @@
     src: url('/fonts/LinearGrotesk-Light.otf') format('opentype');
     font-weight: normal;
     font-style: bold;
+}
+
+@font-face {
+    font-family: 'InterTight';
+    src: url('/fonts/InterTight.ttf') format('truetype');
+    font-weight: normal;
 }
 
 
