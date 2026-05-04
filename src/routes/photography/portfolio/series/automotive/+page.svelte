@@ -20,7 +20,7 @@
             </p>
         </div>
 
-        <p class="text-md font-body col-start-4 col-span-3 row-start-7 row-span-2">
+        <p class="text-md font-body col-start-4 col-span-3 row-start-8 row-span-2">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
         </p>
 
