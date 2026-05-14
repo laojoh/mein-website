@@ -41,41 +41,45 @@
         <!-- Menu -->
         <nav class = "flex flex-col gap-10 origin-top-left rotate-90 text-header font-header text-5xl uppercase absolute top-30 -right-60 p-5 2xl:top-36 2xl:-right-72">
         <!-- Portfolio -->
-            <div class = "flex w-full gap-7 items-center group cursor-pointer transition-transform duration-300 hover:scale-110">
-                <a href = "photography/portfolio" class = "text-5xl 2xl:text-6xl font-header">
+            <a class = "flex w-full gap-7 items-center group cursor-pointer transition-transform duration-300 hover:scale-110"
+              href = "photography/portfolio">
+                <h2 class = "text-5xl 2xl:text-6xl font-header">
                   <TypeWriter text = "portfolio"/>
-                </a>
-                <a class = "text-xs 2xl:text-lg font-subheader -rotate-90 w-10 text-center" href = "/portfolio">
+                </h2>
+                <p class = "text-xs 2xl:text-lg font-subheader -rotate-90 w-10 text-center">
                   <!-- <TypeWriter text = "my photo projects"/> --> My photo projects
-                </a>
-            </div>
+                </p>
+            </a>
         <!-- About -->
-            <div class = "flex gap-7 items-center w-full group cursor-pointer transition-transform duration-300 hover:scale-110">
-                <a href = "photography/about" class = "text-5xl 2xl:text-6xl font-header">
+            <a class = "flex w-full gap-10 items-center group cursor-pointer transition-transform duration-300 hover:scale-110"
+              href = "photography/about">
+                <h2 class = "text-5xl 2xl:text-6xl font-header">
                   <TypeWriter text = "A Glimpse"/>
-                </a>
+                </h2>
                 <p class = "text-xs 2xl:text-lg font-subheader -rotate-90 w-10 text-center">
                   <!-- <TypeWriter text = "A little about me"/> --> A little about me
                 </p>
-            </div>
+            </a>
         <!-- Contact -->
-            <div class = "flex w-full gap-7 items-center group cursor-pointer transition-transform duration-300 hover:scale-110">
-                <a href = "photography/contact" class = "text-5xl 2xl:text-6xl font-header">
+            <a class = "flex w-full gap-10 items-center group cursor-pointer transition-transform duration-300 hover:scale-110"
+              href = "photography/contact">
+                <h2 class = "text-5xl 2xl:text-6xl font-header">
                   <TypeWriter text = "Contact"/>
-                </a>
+                </h2>
                 <p class = "text-xs 2xl:text-lg font-subheader -rotate-90 w-10 text-center">
                   <!-- <TypeWriter text = "Where to find me"/> --> Where to find me
                 </p>
-          </div>
+              </a>
         <!-- Sevices -->
-          <div class = "flex w-full gap-3 items-center group cursor-pointer transition-transform duration-300 hover:scale-110">
-                <a href = "photography/contact" class = "text-5xl 2xl:text-6xl font-header">
+          <a class = "flex w-full gap-3 items-center group cursor-pointer transition-transform duration-300 hover:scale-110"
+            href = "photography/services">
+                <h2 class = "text-5xl 2xl:text-6xl font-header">
                   <TypeWriter text = "Services"/>
-                </a>
+                </h2>
                 <p class = "text-xs 2xl:text-lg font-subheader -rotate-90 w-10 text-center">
                   <!-- <TypeWriter text = "For you"/> --> For you
                 </p>
-            </div>
+            </a>
         </nav>
     </div>
     <!-- Slideshow -->

@@ -13,7 +13,7 @@
     <div class = "mt-5 mb-10">
         <Back/>
     </div>
-    <div class = "grid grid-cols-3 grid-rows-2 gap-y-15 w-full 2xl:gap-10">
+    <div class = "grid grid-cols-2 grid-auto-rows-auto gap-y-15 w-full 2xl:gap-10 place-items-center">
         <!-- Blue Angels -->
             <Tile
             id = "blue"
@@ -35,8 +35,8 @@
             title = "CHINA"
             desc = "July 1-12, 2025"
             href = "collections/chinajul25"
-            x = {{default: 34, '2xl': 25.5}}
-            y = {{default: 55, '2xl': 123}}
+            x = {{default: -359, '2xl': -548}}
+            y = {{default: 52.5, '2xl': 123}}
             />
     </div>
 </div>

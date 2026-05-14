@@ -13,7 +13,7 @@
     <div class = "mt-5 mb-10">
         <Back/>
     </div>
-    <div class = "grid grid-cols-3 grid-rows-2 gap-y-15 w-full">
+    <div class = "grid grid-cols-3 grid-auto-rows-auto gap-y-15 w-full place-items-center">
         <!-- Street -->
             <Tile
             id = "street"
@@ -46,8 +46,8 @@
             title = "AUTOMOTIVE"
             desc = ""
             href = "series/automotive"
-            x = {{default: -547.5, '2xl': -857.5}} 
-            y = {{default: 38, '2xl': -37}}
+            x = {{default: -592, '2xl': -895}} 
+            y = {{default: -46, '2xl': -37}}
             />
     </div>
 </div>

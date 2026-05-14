@@ -30,6 +30,7 @@
 		"animejs": "^4.3.6",
 		"flowbite": "^3.1.2",
 		"flowbite-svelte": "^1.22.0",
+		"resend": "^6.12.3",
 		"svelte-inview": "^4.0.4",
 		"svelte-typed-js": "^1.0.3",
 		"svelte-typewrite": "^3.0.0",
