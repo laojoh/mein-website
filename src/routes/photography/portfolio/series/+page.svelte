@@ -35,6 +35,8 @@
             title = "PORTRAITURE"
             desc =""
             href = "series/portraiture"
+            x = {{default: -592, '2xl': 0}}
+            y = {{default: -46, '2xl': 140}}
             />
         <!-- Automotive -->
             <Tile

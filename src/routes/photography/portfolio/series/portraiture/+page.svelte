@@ -7,9 +7,7 @@
 </script>
 <div class = "bg-bg p-7 pl-15">
     <Header/>
-    <div class = "absolute">
-        <Back/>
-    </div>
+    <Back/>
     <div class = "relative">
         <div class = "flex flex-row gap-5 items-center place-content-center">
             <img class="zoomable w-100 2xl:w-175"
