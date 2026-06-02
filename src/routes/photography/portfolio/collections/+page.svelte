@@ -24,6 +24,8 @@
             title = "BLUE ANGELS"
             desc = "October 14, 2024"
             href = "collections/blueangels"
+            x = {{default: 185, '2xl': 440}}
+            y= {{default: -10, '2xl': -30}}
             />
         <!-- China -->
             <Tile
@@ -35,8 +37,8 @@
             title = "CHINA"
             desc = "July 1-12, 2025"
             href = "collections/chinajul25"
-            x = {{default: -359, '2xl': -548}}
-            y = {{default: 52.5, '2xl': 123}}
+            x = {{default: -352, '2xl': -548}}
+            y = {{default: 47, '2xl': 140}}
             />
     </div>
 </div>

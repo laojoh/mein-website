@@ -8,30 +8,108 @@
     import { animate, onScroll } from 'animejs';
 
     let container: HTMLDivElement | null = null;
+    let img1: HTMLDivElement | null = null;
     let img2: HTMLDivElement | null = null;
+    let img3: HTMLImageElement | null = null;
+    let img4: HTMLImageElement | null = null;
+    let txt1: HTMLDivElement | null = null;
 
     onMount(() => {
-        if (!img2 || !container) return;
-        animate(img2, {
-            scale: [0, 1],
+        if (!container) return;
+        // @ts-ignore
+        animate(img1, {
             duration: 1000,
             ease: 'linear',
+            opacity: [0, 1],
+            x: '20vh',
             autoplay: onScroll({
                 container: container,
                 enter: 'bottom-=50',
-                leave: 'top+=500',
+                leave: 'top+=700',
                 sync: true,
                 debug: false,
             })
+        });
+
+        // @ts-ignore
+        animate(img2, {
+            duration: 1000,
+            ease: 'linear',
+            opacity: [0, 1],
+            x: '-10vh',
+            autoplay: onScroll({
+                container: container,
+                enter: 'bottom-=50',
+                leave: 'top+=700',
+                sync: true,
+                debug: false,
+            })
+        });
+
+        // @ts-ignore
+        animate(img3, {
+            duration: 1000,
+            ease: 'linear',
+            opacity: [0, 1],
+            y: -150,
+            autoplay: onScroll({
+                container: container,
+                enter: 'bottom-=50 top-=100',
+                leave: 'top+=700 top+=100',
+
+                sync: true,
+                debug: false,
+            })
+        });
+
+        // @ts-ignore
+        animate(txt1, {
+            duration: 1000,
+            ease: 'linear',
+            opacity: [0, 1],
+            y: 300,
+            autoplay: onScroll({
+                container: container,
+                enter: 'bottom-=50 top-=100',
+                leave: 'top+=700 top+=100',
+
+                sync: true,
+                debug: false,
+            })
+        });
+
+        // @ts-ignore
+        animate(img4, {
+            duration: 1000,
+            ease: 'linear',
+            opacity: [0, 1],
+            x: -250,
+            autoplay: onScroll({
+                container: container,
+                enter: 'bottom-=50 top-=100',
+                leave: 'bottom-=100 bottom-=100',
+
+                sync: true,
+                debug: false,
+            })
+
         });
     });
 </script>
 
 <div bind:this={container} class="bg-bg p-7 pl-15 h-screen overflow-y-scroll">
     <Header/>
-    <nav class="grid grid-cols-6 grid-auto-rows gap-10 p-5">
+    <div class = "absolute">
         <Back/>
-        <div class="col-start-5 col-span-2 row-start-2 text-header font-subheader">
+    </div>
+    <div class = "relative">
+        <div class = "flex flex-row gap-5 items-center place-content-center">
+            <img class="zoomable w-100 2xl:w-175"
+                src="/images/china/display/china1.jpg"
+                data-full="/images/china/full/china1.jpg"
+                alt=""/>
+        </div>
+        <div class="text-header font-subheader w-100 absolute top-70 2xl:top-70 left-230 2xl:left-365">
             <h2 class="text-4xl 2xl:text-5xl font-header">
                 <TypeWrite text="Project Background"/>
             </h2>
@@ -39,45 +117,37 @@
                 <TypeWriter texts={["2025 was the first time I had ever been to China. Some of my family had gone before, but I had personally never been until July of that year."]} repeat={1} typeSpeed={15} endState={{text: "typed", caret: "hidden"}} blinkDuration={1000}/>
             </p>
         </div>
+    </div>
 
-        <!-- Text -->
-        <p class="font-body text-md col-start-1 col-span-3 row-start-8 row-span-2">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
-        </p>
-        <p class="font-body text-md col-start-5 col-span-2 row-start-10 row-span-2">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
-        </p>
         
-        <!-- Images -->
-        <img class="zoomable col-start-3 col-span-2 row-start-1 row-span-3" 
-            src="/images/china/display/china1.jpg" 
-            data-full="/images/china/full/china1.jpg" 
-            alt=""/>
+    <div class = "relative h-auto pt-10 mb-10">
+        <img bind:this={img1} class = "zoomable w-150 2xl:w-225 absolute -left-37.5"
+            src="/images/china/display/china2.jpg"
+            data-full="/images/china/full/china2.jpg"
+            alt=""
+        />
 
-        <div bind:this={img2} id="img2" class="col-start-2 col-span-4 row-start-4 row-span-2">
-            <img class="zoomable"
-                src="/images/china/display/china2.jpg"
-                data-full="/images/china/full/china2.jpg"
-                alt=""
-            />
-        </div>
-
-
-        <img class="zoomable col-start-1 col-span-3 row-start-6 row-span-4"
+        <img bind:this={img2} class="zoomable w-175 2xl:w-250 absolute left-180 top-30 2xl:left-293"
             src="/images/china/display/china3.jpg"
             data-full="/images/china/full/china3.jpg"
             alt=""
         />
 
-        <img class="zoomable col-start-4 col-span-3 row-start-6 row-span-4" 
-            src="/images/china/display/china4.jpg" 
-            data-full="/images/china/full/china4.jpg" 
+        <img bind:this={img3} class="zoomable w-100 2xl:w-150 absolute top-160 left-50 2xl:top-215 2xl:left-94"
+            src="/images/china/display/china4.jpg"
+            data-full="/images/china/full/china4.jpg"
             alt="" />
 
-        <img class="zoomable col-start-2 col-span-3 row-start-10 row-span-2" 
+        <p bind:this={txt1} class="font-body text-md 2xl:text-xl w-150 2xl:w-200 absolute left-175 2xl:left-290 top-90 2xl:top-140">
+            It all really started with an opportunity to go to China on a school trip. Before that, I had went to Taiwan at my previous school, but I had never been to mainland China. I was really excited to go, and I had a lot of fun while I was there. I took a lot of photos, and I wanted to share them with people. I also wanted to document my experience in China, and I thought that a photo series would be a good way to do that.
+        </p>
+
+        <img bind:this={img4} class="zoomable w-100 2xl:w-150 absolute top-200 left-225 2xl:top-250 2xl:left-330" 
             src="/images/china/display/china5.jpg" 
             data-full="/images/china/full/china5.jpg" 
             alt="" />
-    </nav>
+
+    </div>
+
     <Lightbox/>
 </div>
