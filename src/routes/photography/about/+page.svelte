@@ -1,5 +1,5 @@
 <script>
-    import Header from "$lib/components/Header.svelte";
+    import Header from "$lib/components/PhotoHeader.svelte";
     import TypeWriter from "$lib/components/TypeWriter.svelte";
 
 </script>

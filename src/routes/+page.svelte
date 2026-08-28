@@ -1,24 +1,102 @@
+<script>
+    import { onMount } from 'svelte';
+    import Star from '$lib/components/Star.svelte';
+    import TypeWriter from '$lib/components/TypeWriter.svelte';
+
+    let x = 0;
+    let y = 0;
+
+    let targetX = 0;
+    let targetY = 0;
+
+    onMount(() => {
+        const handleMouseMove = (e) => {
+        targetX = (e.clientX / window.innerWidth - 0.5) * 2;
+        targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        // @ts-ignore
+        let animationFrame;
+
+        const animate = () => {
+        x += (targetX - x) * 0.05;
+        y += (targetY - y) * 0.05;
+
+        animationFrame = requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        // @ts-ignore
+        cancelAnimationFrame(animationFrame);
+        };
+    });
+</script>
+
 <div class = "bg-bg p-10">
-    <div class = "flex">
-        <nav class = " w-auto flex justify-start">
-            <h1 class = " text-7xl text-header font-header uppercase"> <a href = "../">John Lao</a> </h1>
-        </nav>
-        <nav>
-            <nav class = "flex flex-col gap-8 origin-top-left rotate-90 text-header font-header text-7xl uppercase absolute top-28 -right-75">
-                <div class = "flex w-100 gap-4 items-center">
-                    <a href = "/photography">Photography</a>
-                    <a class = "text-xs font-subheader" href = "/photography">My photography projects</a>
+    <div class="fixed inset-0 select-none overflow-hidden">
+        <div class = pointer-events-none>
+            <!-- planet -->
+            <img class = " w-15xl absolute -bottom-160 -left-100 rotate-90" src = "/images/home/planet.png" alt = "planet" style={`transform: translate(${y * 20}px, ${x * -20}px);`}/>
+            <!-- stars (max stretch 1) -->
+            <div class = "absolute top-20 left-130" style={`transform: translate(${x * 10}px, ${y * 10}px);`}>
+                <Star
+                size={100}
+                stretchX={1}
+                stretchY={1}
+                rotation={0}
+                />
+            </div>
+            <!-- <div class = "absolute top-45 left-155" style={`transform: translate(${x * 9}px, ${y * 9}px);`}>
+                <Star
+                size={30}
+                stretchX={1}
+                stretchY={1}
+                rotation={0}
+                color = "#b9b0b0"
+                />
+            </div> -->
+
+            <div class = "absolute top-45 left-155" style={`transform: translate(${x * 9}px, ${y * 9}px);`}>
+                <Star
+                size={70}
+                stretchX={1}
+                stretchY={1}
+                rotation={0}
+                />
+            </div>
+
+        </div>
+        <div class = "p-7 pl-15">
+            <nav class = "w-full flex flex-row justify-start gap-4 items-center p-5 " style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
+            <a href="/photography">
+                <div class = "text-8xl 2xl:text-9xl text-header font-header uppercase">
+                    <TypeWriter text = "John Lao"/>
                 </div>
-                <div class = "flex w-70 gap-4 items-center">
-                    <a href = "/about">A Glimpse</a>
-                    <p class = "text-xs font-subheader">A little about me and my life</p>
+            </a>
+            </nav>
+            <nav class = "flex flex-col gap-8 text-header font-header text-6xl uppercase absolute top-45 right-35" style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
+                <div class = "flex w-100 gap-4 items-center transition-transform duration-300 hover:scale-110">
+                    <a href = "/projects"><TypeWriter text = "Projects"/></a>
+                    <a class = "text-xs font-subheader" href = "/projects">My personal projects</a>
                 </div>
-                <div class = "flex w-80 gap-4 items-center">
-                    <a href = "/contact">Contact</a>
+                <div class = "flex w-100 gap-4 items-center transition-transform duration-300 hover:scale-110">
+                    <a href = "/photography"><TypeWriter text = "Photography"/></a>
+                    <a class = "text-xs font-subheader" href = "/photography">My photography gallery</a>
+                </div>
+                <div class = "flex w-120 gap-6 items-center transition-transform duration-300 hover:scale-110">
+                    <a href = "/about"><TypeWriter text = "A Glimpse"/></a>
+                    <p class = "text-xs font-subheader w-30">A little about me and my life</p>
+                </div>
+                <div class = "flex w-80 gap-4 items-center transition-transform duration-300 hover:scale-110">
+                    <a href = "/contact"><TypeWriter text = "Contact"/></a>
                     <p class = "text-xs font-subheader">Where to find me</p>
                 </div>
             </nav>
-        </nav>
+        </div>
     </div>
-    <img class = " w-4xl" src = "/images/placeholder images/placeholder1.jpg" alt = "cat with headphones"/>
 </div>

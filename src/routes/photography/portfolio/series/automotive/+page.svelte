@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Header from "$lib/components/Header.svelte";
+    import Header from "$lib/components/PhotoHeader.svelte";
     import B2Port from "$lib/components/Back.svelte";
     import Lightbox from "$lib/components/Lightbox.svelte";
     import TypeWrite from "$lib/components/TypeWriter.svelte";

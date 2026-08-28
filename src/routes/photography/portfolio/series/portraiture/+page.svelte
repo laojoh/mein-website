@@ -1,11 +1,34 @@
-<script>
+<script lang="ts">
     import Back from "$lib/components/Back.svelte";
-    import Header from "$lib/components/Header.svelte";
+    import Header from "$lib/components/PhotoHeader.svelte";
+    import Lightbox from "$lib/components/Lightbox.svelte";
     import TypeWrite from "$lib/components/TypeWriter.svelte";
     import { TypeWriter } from "svelte-typewrite";
+    import { onMount } from "svelte";
+    import { animate, onScroll } from "animejs";
 
+    let container: HTMLDivElement | null = null;
+    let img1: HTMLDivElement | null = null;
+    let img2: HTMLDivElement | null = null;
+    let img3: HTMLImageElement | null = null;
+    let img4: HTMLImageElement | null = null;
+    let txt1: HTMLDivElement | null = null;
+    let img5: HTMLImageElement | null = null;
+    let img6: HTMLImageElement | null = null;
+
+    onMount(() => {
+
+        if (!container) return;
+        // @ts-ignore
+        animate(img1, {
+
+        })
+
+    });
 </script>
-<div class = "bg-bg p-7 pl-15">
+
+
+<div bind:this = {container} class = "bg-bg p-7 pl-15 h-screen overflow-y-scroll">
     <Header/>
     <Back/>
     <div class = "relative">

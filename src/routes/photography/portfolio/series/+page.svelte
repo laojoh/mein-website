@@ -1,6 +1,6 @@
 <script lang="ts">
     import Back from "$lib/components/Back.svelte";
-    import Header from "$lib/components/Header.svelte";
+    import Header from "$lib/components/PhotoHeader.svelte";
     // @ts-ignore
     import Tile from "$lib/components/Tile.svelte";
 
@@ -35,8 +35,8 @@
             title = "PORTRAITURE"
             desc =""
             href = "series/portraiture"
-            x = {{default: -592, '2xl': 0}}
-            y = {{default: -46, '2xl': 140}}
+            x = {{default: 0, '2xl': 0}}
+            y = {{default: 46, '2xl': 140}}
             />
         <!-- Automotive -->
             <Tile

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Back from "$lib/components/Back.svelte";
-    import Header from "$lib/components/Header.svelte";
+    import Header from "$lib/components/PhotoHeader.svelte";
     import Lightbox from "$lib/components/Lightbox.svelte";
     import TypeWrite from "$lib/components/TypeWriter.svelte";
     import { TypeWriter } from "svelte-typewrite";

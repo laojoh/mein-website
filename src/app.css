@@ -1,14 +1,29 @@
 @import 'tailwindcss';
 
 @theme{
-    --color-bg: #F4ECE5;
-    --color-header: #52412A;
-    --color-shadow: #876F5B;
-    --color-something: #B5B79D;
-    --color-imagebg: #D9CFC1;
-    --font-header: 'Chaviera';
+    --color-bg: #FFFFFF;
+    --color-header: #000000;
+    --color-shadow: #B9BEC6;
+    --color-something: #D9DDE3;
+    --color-imagebg: #E8EBEF;
+    --font-header: 'Square-bold';
     --font-subheader: 'LinearGrotesk';
     --font-body: 'InterTight';
+}
+
+@font-face {
+    font-family: "Square-bold";
+    src: url('/fonts/Square-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Square-regular";
+    src: url('/fonts/Square-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Square-light";
+    src: url('/fonts/Square-Light.otf') format('opentype');
 }
 
 @font-face {

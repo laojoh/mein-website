@@ -1,6 +1,6 @@
 <script lang="ts">
     import Back from "$lib/components/Back.svelte";
-    import Header from "$lib/components/Header.svelte";
+    import Header from "$lib/components/PhotoHeader.svelte";
     import Lightbox from "$lib/components/Lightbox.svelte";
     import TypeWrite from "$lib/components/TypeWriter.svelte";
     import { TypeWriter } from "svelte-typewrite";
@@ -67,7 +67,7 @@
             duration: 1000,
             ease: 'linear',
             opacity: [0, 1],
-            y: 300,
+            y: 275,
             autoplay: onScroll({
                 container: container,
                 enter: 'bottom-=50 top-=100',
@@ -87,7 +87,7 @@
             autoplay: onScroll({
                 container: container,
                 enter: 'bottom-=50 top-=100',
-                leave: 'bottom-=100 bottom-=100',
+                leave: 'bottom-=100 bottom-=400',
 
                 sync: true,
                 debug: false,
@@ -99,7 +99,7 @@
 
 <div bind:this={container} class="bg-bg p-7 pl-15 h-screen overflow-y-scroll">
     <Header/>
-    <div class = "absolute">
+    <div class = "sticky">
         <Back/>
     </div>
     <div class = "relative">
@@ -138,11 +138,11 @@
             data-full="/images/china/full/china4.jpg"
             alt="" />
 
-        <p bind:this={txt1} class="font-body text-md 2xl:text-xl w-150 2xl:w-200 absolute left-175 2xl:left-290 top-90 2xl:top-140">
+        <p bind:this={txt1} class="font-body text-md 2xl:text-2xl w-150 2xl:w-200 absolute left-175 2xl:left-290 top-90 2xl:top-140">
             It all really started with an opportunity to go to China on a school trip. Before that, I had went to Taiwan at my previous school, but I had never been to mainland China. I was really excited to go, and I had a lot of fun while I was there. I took a lot of photos, and I wanted to share them with people. I also wanted to document my experience in China, and I thought that a photo series would be a good way to do that.
         </p>
 
-        <img bind:this={img4} class="zoomable w-100 2xl:w-150 absolute top-200 left-225 2xl:top-250 2xl:left-330" 
+        <img bind:this={img4} class="zoomable w-100 2xl:w-150 absolute top-200 left-225 2xl:top-270 2xl:left-330" 
             src="/images/china/display/china5.jpg" 
             data-full="/images/china/full/china5.jpg" 
             alt="" />
