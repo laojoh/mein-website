@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import Star from '$lib/components/Star.svelte';
     import TypeWriter from '$lib/components/TypeWriter.svelte';
+    import AmbientShapes from '$lib/components/AmbientShapes.svelte';
 
     let x = 0;
     let y = 0;
@@ -10,6 +11,7 @@
     let targetY = 0;
 
     onMount(() => {
+        // @ts-ignore
         const handleMouseMove = (e) => {
         targetX = (e.clientX / window.innerWidth - 0.5) * 2;
         targetY = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -38,10 +40,11 @@
 </script>
 
 <div class = "bg-bg p-10">
+    <AmbientShapes opacity={0.7} />
     <div class="fixed inset-0 select-none overflow-hidden">
         <div class = pointer-events-none>
             <!-- planet -->
-            <img class = " w-15xl absolute -bottom-160 -left-100 rotate-90" src = "/images/home/planet.png" alt = "planet" style={`transform: translate(${y * 20}px, ${x * -20}px);`}/>
+            <!-- <img class = " w-15xl absolute -bottom-160 -left-100 rotate-90" src = "/images/home/planet.png" alt = "planet" style={`transform: translate(${y * 25}px, ${x * -25}px);`}/> -->
             <!-- stars (max stretch 1) -->
             <div class = "absolute top-20 left-130" style={`transform: translate(${x * 10}px, ${y * 10}px);`}>
                 <Star
@@ -49,17 +52,18 @@
                 stretchX={1}
                 stretchY={1}
                 rotation={0}
+                waist = {0.2}
                 />
             </div>
-            <!-- <div class = "absolute top-45 left-155" style={`transform: translate(${x * 9}px, ${y * 9}px);`}>
+            <div class = "absolute bottom-15 left-15" style={`transform: translate(${x * 25}px, ${y * 25}px);`}>
                 <Star
-                size={30}
+                size={350}
                 stretchX={1}
                 stretchY={1}
                 rotation={0}
-                color = "#b9b0b0"
+                waist = {0.3}
                 />
-            </div> -->
+            </div>
 
             <div class = "absolute top-45 left-155" style={`transform: translate(${x * 9}px, ${y * 9}px);`}>
                 <Star
@@ -67,17 +71,19 @@
                 stretchX={1}
                 stretchY={1}
                 rotation={0}
+                waist = {0.2}
                 />
             </div>
 
         </div>
         <div class = "p-7 pl-15">
-            <nav class = "w-full flex flex-row justify-start gap-4 items-center p-5 " style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
+            <nav class = "w-full flex flex-col justify-start items-start gap-4 p-5 " style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
             <a href="/photography">
                 <div class = "text-8xl 2xl:text-9xl text-header font-header uppercase">
                     <TypeWriter text = "John Lao"/>
                 </div>
             </a>
+            <p class = "text-md font-body pl-3">&mdash; Robotics, Photography, Web Development &mdash;</p>
             </nav>
             <nav class = "flex flex-col gap-8 text-header font-header text-6xl uppercase absolute top-45 right-35" style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
                 <div class = "flex w-100 gap-4 items-center transition-transform duration-300 hover:scale-110">

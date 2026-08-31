@@ -27,7 +27,7 @@
       index = (index + 1) % images.length;
     }, 5000); // every 5 seconds
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: { clientX: number; clientY: number; }) => {
         targetX = (e.clientX / window.innerWidth - 0.5) * 2;
         targetY = (e.clientY / window.innerHeight - 0.5) * 2;
         };
