@@ -38,20 +38,17 @@
 
 </script>
 
-<div class = "pointer-events-none absolute inset-0 overflow-hidden text-header" style={`opacity: ${opacity}; transform: translate(${x * 5}px, ${y * 5}px);`}>
-    <svg class = "ambient-shapes w-full h-full" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<div class = "pointer-events-none fixed inset-0 overflow-hidden text-header" style={`opacity: ${opacity}; transform: translate(${x * 5}px, ${y * 5}px);`}>
+    <!-- DESKTOP -->
+    <svg class = "ambient-shapes hidden lg:block w-full h-full" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
         <!-- tracks -->
-        <path d="M60,650 L60,420 L500, 420 L500, -1" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <path d="M60,1600 L60,420 L500, 420 L500, -1" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
         <path d="M1500, -1 L1500,345 L900,345 L900,535 L1275,535 L1275, 900" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-        <path d="M900,50 L900,160 L1040,160" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-        <path d="M140,820 L340,820 L340,720" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
         <path d="M782,2 L782,360 L-1,360" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
         
         <!-- traveling segments -->
         <path class = "crawl-a" d="M60,650 L60,420 L500,420 L500, -1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40 590"/>
         <path class = "crawl-b" d="M1500, -1 L1500,345 L900,345 L900,535 L1275,535 L1275, 900" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="36 744"/>
-        <path class = "crawl-c" d="M900,50 L900,160 L1040,160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="22 228"/>
-        <path class = "crawl-d" d="M140,820 L340,820 L340,720" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20 280"/>
         <path class="crawl-e" d="M782,2 L782,360 L-1,360" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40 1055"/>
 
         <!-- corner nodes -->
@@ -63,6 +60,18 @@
         <circle cx="782" cy="360" r="3" fill="currentColor" opacity="0.25"/>
         <circle cx="1275" cy="535" r="3" fill="currentColor" opacity="0.25"/>
     </svg>
+
+    <!-- MOBILE -->
+    <svg class = "ambient-shapes lg:hidden w-full h-full" viewBox="0 0 800 1600" preserveAspectRatio="xMidYMid slice">
+        <!-- tracks -->
+        <path d="M1600, 800 L1600, 250 L115, 250 L115, -1" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        
+        <!-- traveling segments -->
+        <path class = "crawl-aa" d="M1600, 800 L1600, 250 L115, 250 L115, -1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40 590"/>
+
+        <!-- corner nodes -->
+        <circle cx="1600" cy="250" r="3" fill="currentColor" opacity="0.25"/>
+    </svg>
 </div>
 
 <style>
@@ -70,16 +79,12 @@
         animation: crawl-a 22s linear infinite;
     }
 
+    .crawl-aa {
+        animation: crawl-aa 15s linear infinite;
+    }
+
     .crawl-b {
         animation: crawl-b 24s linear infinite;
-    }
-
-    .crawl-c {
-        animation: crawl-c 12s linear infinite;
-    }
-
-    .crawl-d {
-        animation: crawl-d 14s linear infinite reverse;
     }
     
     .crawl-e { 
@@ -88,6 +93,10 @@
     
 
     @keyframes crawl-a {
+        to { stroke-dashoffset: -630; }
+    }
+
+    @keyframes crawl-aa {
         to { stroke-dashoffset: -630; }
     }
 

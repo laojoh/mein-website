@@ -70,6 +70,7 @@
                 stretchX={1}
                 stretchY={1}
                 rotation={0}
+                waist = {0.3}
                 />
             </div>
         </div>

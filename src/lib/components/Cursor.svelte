@@ -44,7 +44,7 @@
     y={$coords1.y - $size}
     width={$size * 2}
     height={$size * 2}
-    stroke="#52412A"
+    stroke="#000000"
     stroke-width="1"
     fill="none"
     />
