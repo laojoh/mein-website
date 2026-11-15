@@ -14,6 +14,40 @@
     let img4: HTMLImageElement | null = null;
     let txt1: HTMLDivElement | null = null;
 
+
+    let x = 0;
+    let y = 0;
+
+    let targetX = 0;
+    let targetY = 0;
+
+    onMount(() => {
+        const handleMouseMove = (e: { clientX: number; clientY: number; }) => {
+        targetX = (e.clientX / window.innerWidth - 0.5) * 2;
+        targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        // @ts-ignore
+        let animationFrame;
+
+        const animate = () => {
+        x += (targetX - x) * 0.05;
+        y += (targetY - y) * 0.05;
+
+        animationFrame = requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        // @ts-ignore
+        cancelAnimationFrame(animationFrame);
+        };
+    });
+
     onMount(() => {
         if (!container) return;
         // @ts-ignore
@@ -71,7 +105,7 @@
             autoplay: onScroll({
                 container: container,
                 enter: 'bottom-=50 top-=100',
-                leave: 'top+=700 top+=100',
+                leave: 'top+=500 bottom+=100',
 
                 sync: true,
                 debug: false,
@@ -98,11 +132,13 @@
 </script>
 
 <div bind:this={container} class="bg-bg p-7 pl-15 h-screen overflow-y-scroll">
-    <Header/>
-    <div class = "sticky">
+    <div style={`transform: translate(${x * 10}px, ${y * 10}px);`}>
+        <Header/>
+    </div>
+    <div style={`transform: translate(${x * 10}px, ${y * 10}px);`}>
         <Back/>
     </div>
-    <div class = "relative">
+    <div class = "relative" style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
         <div class = "flex flex-row gap-5 items-center place-content-center">
             <img class="zoomable w-100 2xl:w-175"
                 src="/images/china/display/china1.jpg"
@@ -120,7 +156,7 @@
     </div>
 
         
-    <div class = "relative h-auto pt-10 mb-10">
+    <div class = "relative h-auto pt-10 mb-10" style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
         <img bind:this={img1} class = "zoomable w-150 2xl:w-225 absolute -left-37.5"
             src="/images/china/display/china2.jpg"
             data-full="/images/china/full/china2.jpg"

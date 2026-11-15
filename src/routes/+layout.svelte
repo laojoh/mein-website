@@ -4,6 +4,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import Cursor from '$lib/components/Cursor.svelte';
+	import AmbientShapes from '$lib/components/AmbientShapes.svelte';
 
 	injectSpeedInsights();
 
@@ -22,10 +23,13 @@
 </script>
 
 <Cursor/>
+<AmbientShapes opacity={0.7}/>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
+
+
 
 {@render children?.()}
 

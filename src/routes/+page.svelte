@@ -41,7 +41,6 @@
 
 <div class = "bg-bg p-10">
     <div class="relative min-h-screen lg:fixed lg:inset-0 select-none lg:overflow-hidden">
-        <AmbientShapes opacity={0.7} />
         <!-- decorative parallax elements are tuned for desktop proportions, so they only show at lg+ -->
         <div class = "hidden lg:block pointer-events-none">
             <!-- planet -->

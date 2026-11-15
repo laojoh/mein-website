@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+@source not "../static/models";
+@source not "../static/draco";
+@source not "../static/sat";
+@source not "../scripts";
 
 @theme{
     --color-bg: #FFFFFF;

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import AmbientShapes from "$lib/components/AmbientShapes.svelte";
     import Star from "$lib/components/Star.svelte";
   import TypeWriter from "$lib/components/TypeWriter.svelte";
   import { onMount, onDestroy } from "svelte";
@@ -61,6 +62,7 @@
 </script>
 
 <div class = "bg-bg p-7 pl-15">
+    <AmbientShapes opacity={0.7}/>
     <div class = "flex">
         <div class = pointer-events-none>
             <!-- planet -->

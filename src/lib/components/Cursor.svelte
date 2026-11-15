@@ -54,7 +54,7 @@
     y={$coords2.y - $size/4}
     width={$size/2}
     height={$size/2}
-    fill="#52412A"
+    fill="#000000"
     />
 </svg>
 
