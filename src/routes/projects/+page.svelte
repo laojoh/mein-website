@@ -80,14 +80,14 @@ onMount(() => {
 </script>
 
 <div class = "p-10">
-        <nav class = "w-full flex flex-row justify-start gap-4 items-center p-5 z-10">
+        <nav class = "relative w-full flex flex-row justify-start gap-4 items-center p-5 z-10">
             <a href="/projects">
               <div class = "text-8xl 2xl:text-9xl text-header font-header uppercase"  style={`transform: translate(${x * 15}px, ${y * 15}px);`}>
                 <TypeWriter text = "Projects"/>
                 </div>
             </a>
             <h1 class = "text-md 2xl:text-lg text-header font-subheader uppercase" style={`transform: translate(${x * 10}px, ${y * 10}px);`}> <a href = "../" >
-            <TypeWriter text = "By John Lao"/>
+                <TypeWriter text = "By John Lao"/>
             </a> </h1>
 
         </nav>

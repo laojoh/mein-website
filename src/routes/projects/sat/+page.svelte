@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, untrack } from 'svelte';
 	import TypeWriter from '$lib/components/TypeWriter.svelte';
+	import Desmos from '$lib/components/Desmos.svelte';
 	import {
 		LETTERS, imgUrl, checkSpr, loadProgress, saveProgress, shuffle,
 		type Letter, type Progress, type Question
@@ -24,10 +25,48 @@
 
 	// ---- progress (localStorage) ---------------------------------------------------
 	let progress = $state<Progress>({});
+	let showCalc = $state(true);
 	onMount(() => {
 		progress = loadProgress();
+		try {
+			showCalc = localStorage.getItem('sat-calc') !== 'off';
+		} catch {}
 		rebuild();
 	});
+	function toggleCalc() {
+		showCalc = !showCalc;
+		try {
+			localStorage.setItem('sat-calc', showCalc ? 'on' : 'off');
+		} catch {}
+	}
+
+	// ---- floating panels: eased mouse parallax, same feel as the rest of the site -----
+	// Each panel gets its own depth (px of travel at the screen edge). Motion freezes while
+	// the pointer is over the calculator so dragging on the graph doesn't wobble.
+	let mx = $state(0);
+	let my = $state(0);
+	onMount(() => {
+		if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		let tx = 0, ty = 0, frame = 0;
+		const onMove = (e: MouseEvent) => {
+			if ((e.target as HTMLElement)?.closest?.('[data-calc]')) return;
+			tx = (e.clientX / innerWidth - 0.5) * 2;
+			ty = (e.clientY / innerHeight - 0.5) * 2;
+		};
+		const tick = () => {
+			mx += (tx - mx) * 0.05;
+			my += (ty - my) * 0.05;
+			frame = requestAnimationFrame(tick);
+		};
+		addEventListener('mousemove', onMove);
+		tick();
+		return () => {
+			removeEventListener('mousemove', onMove);
+			cancelAnimationFrame(frame);
+		};
+	});
+	const float = (depth: number) => `transform: translate3d(${(mx * depth).toFixed(2)}px, ${(my * depth).toFixed(2)}px, 0)`;
+	const windowShadow = 'shadow-[0_24px_60px_-28px_rgba(0,0,0,0.28)]';
 	function record(id: string, right: boolean) {
 		const p = progress[id] ?? { tries: 0, right: 0, last: false };
 		progress[id] = { ...p, tries: p.tries + 1, right: p.right + (right ? 1 : 0), last: right };
@@ -128,7 +167,9 @@
 	});
 
 	function onKey(e: KeyboardEvent) {
-		const inInput = (e.target as HTMLElement)?.tagName === 'INPUT' || (e.target as HTMLElement)?.tagName === 'SELECT';
+		const target = e.target as HTMLElement;
+		if (target?.closest?.('[data-calc]')) return; // typing in Desmos
+		const inInput = target?.tagName === 'INPUT' || target?.tagName === 'SELECT';
 		if (e.key === 'Enter') {
 			e.preventDefault();
 			checked ? go(1) : check();
@@ -167,26 +208,26 @@
 
 <div class="relative z-10 min-h-screen p-6 md:p-10 font-body text-header">
 	<nav class="flex flex-row flex-wrap items-end gap-4 pb-6">
-		<a href="/projects" class="text-6xl md:text-8xl font-header uppercase leading-none">
+		<a href="/projects" class="text-6xl md:text-8xl font-header uppercase leading-none" style={float(15)}>
 			<TypeWriter text="SAT" />
 		</a>
-		<p class="font-subheader uppercase text-sm md:text-md pb-2">
+		<p class="font-subheader uppercase text-sm md:text-md pb-2" style={float(10)}>
 			Math question bank · {questions.length} questions
 		</p>
-		<a href="/projects" class="ml-auto border-2 border-header font-subheader uppercase text-sm px-4 py-2 hover:bg-header hover:text-bg transition-colors">
+		<a href="/projects" class="ml-auto border-2 border-header bg-bg/80 font-subheader uppercase text-sm px-4 py-2 hover:bg-header hover:text-bg transition-colors" style={float(6)}>
 			Back
 		</a>
 	</nav>
 
 	<!-- stats -->
-	<section class="grid grid-cols-2 lg:grid-cols-5 gap-px bg-shadow border border-shadow mb-6 text-sm">
-		<div class="bg-bg p-3">
+	<section class="grid grid-cols-2 lg:grid-cols-5 gap-px mb-6 text-sm {windowShadow}" style={float(5)}>
+		<div class="bg-bg/80 p-3 ring-1 ring-shadow">
 			<div class="font-subheader uppercase text-xs opacity-60">Answered</div>
 			<div class="text-xl font-header">{totalDone}<span class="opacity-40">/{questions.length}</span></div>
 		</div>
 		{#each stats as s}
 			<button
-				class="bg-bg p-3 text-left hover:bg-imagebg transition-colors {domain === s.d ? 'outline-2 outline-header -outline-offset-2' : ''}"
+				class="bg-bg/80 p-3 ring-1 ring-shadow text-left hover:bg-imagebg transition-colors {domain === s.d ? 'outline-2 outline-header -outline-offset-2' : ''}"
 				onclick={() => (domain = domain === s.d ? 'all' : s.d)}
 			>
 				<div class="font-subheader uppercase text-xs opacity-60 truncate">{s.d}</div>
@@ -200,21 +241,21 @@
 	</section>
 
 	<!-- filters -->
-	<section class="flex flex-wrap gap-3 items-center mb-6 text-sm">
-		<select bind:value={domain} class="border border-shadow bg-bg px-3 py-2">
+	<section class="flex flex-wrap gap-3 items-center mb-6 text-sm" style={float(3)}>
+		<select bind:value={domain} class="border border-shadow bg-bg/80 px-3 py-2">
 			<option value="all">All domains</option>
 			{#each domains as d}<option value={d}>{d}</option>{/each}
 		</select>
-		<select bind:value={skill} class="border border-shadow bg-bg px-3 py-2 max-w-72">
+		<select bind:value={skill} class="border border-shadow bg-bg/80 px-3 py-2 max-w-72">
 			<option value="all">All skills</option>
 			{#each skills as s}<option value={s}>{s}</option>{/each}
 		</select>
-		<select bind:value={qtype} class="border border-shadow bg-bg px-3 py-2">
+		<select bind:value={qtype} class="border border-shadow bg-bg/80 px-3 py-2">
 			<option value="all">All types</option>
 			<option value="mcq">Multiple choice</option>
 			<option value="spr">Student-produced response</option>
 		</select>
-		<select bind:value={status} class="border border-shadow bg-bg px-3 py-2">
+		<select bind:value={status} class="border border-shadow bg-bg/80 px-3 py-2">
 			<option value="all">Any status</option>
 			<option value="new">Not attempted</option>
 			<option value="missed">Missed last time</option>
@@ -223,16 +264,25 @@
 		<label class="flex items-center gap-2 select-none">
 			<input type="checkbox" bind:checked={shuffled} /> Shuffle
 		</label>
-		<button class="ml-auto underline opacity-60 hover:opacity-100" onclick={resetProgress}>Reset progress</button>
+		<button
+			class="ml-auto px-3 py-2 border {showCalc ? 'bg-header text-bg border-header' : 'border-shadow bg-bg/80'}"
+			onclick={toggleCalc}
+			aria-pressed={showCalc}
+		>
+			Desmos calculator
+		</button>
+		<button class="underline opacity-60 hover:opacity-100" onclick={resetProgress}>Reset progress</button>
 	</section>
 
 	{#if !current}
-		<div class="border border-shadow p-10 text-center">
+		<div class="border border-shadow bg-bg/80 p-10 text-center">
 			<p class="font-subheader uppercase">No questions match these filters.</p>
 		</div>
 	{:else}
 		{@const p = progress[current.id]}
-		<article class="border border-shadow bg-bg max-w-4xl">
+		<div class="flex flex-col lg:flex-row gap-6 items-start">
+		<div class="flex-1 min-w-0 max-w-4xl w-full" style={float(8)}>
+		<article class="border border-shadow bg-bg/80 {windowShadow}">
 			<header class="flex flex-wrap items-center gap-x-4 gap-y-1 px-5 py-3 border-b border-shadow text-xs font-subheader uppercase">
 				<span class="font-header text-sm">{index + 1} / {order.length}</span>
 				<span>{current.domain}</span>
@@ -340,8 +390,15 @@
 				{/if}
 			</div>
 		</article>
-		<p class="text-xs opacity-40 mt-3 max-w-4xl">
+		<p class="text-xs opacity-40 mt-3">
 			Keys: 1–4 / A–D pick · Enter check, then next · ← → move · Question ID {current.id} · Questions © College Board
 		</p>
+		</div>
+		{#if showCalc}
+			<aside class="w-full lg:w-[440px] xl:w-[540px] shrink-0 h-[520px] lg:h-[calc(100vh-3rem)] lg:sticky lg:top-6 border border-shadow bg-bg/80 {windowShadow}" style={float(12)}>
+				<Desmos stateKey={current.id} />
+			</aside>
+		{/if}
+		</div>
 	{/if}
 </div>
