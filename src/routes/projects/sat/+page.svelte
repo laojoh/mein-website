@@ -396,7 +396,7 @@
 		</div>
 		{#if showCalc}
 			<aside class="w-full lg:w-[440px] xl:w-[540px] shrink-0 h-[520px] lg:h-[calc(100vh-3rem)] lg:sticky lg:top-6 border border-shadow bg-bg/80 {windowShadow}" style={float(12)}>
-				<Desmos stateKey={current.id} />
+				<Desmos stateKey={current.id} apiKey={data.desmosKey} />
 			</aside>
 		{/if}
 		</div>

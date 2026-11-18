@@ -1,15 +1,15 @@
 <script lang="ts">
 	// Desmos graphing calculator (the same embed the Bluebook SAT app uses).
-	// Needs an API key: set PUBLIC_DESMOS_API_KEY in .env. Falls back to Desmos's public
-	// demo key, which is meant for development only — request a free key at desmos.com/api.
+	// The API key comes from DESMOS_API_KEY or PUBLIC_DESMOS_API_KEY (read in the SAT
+	// route's +page.server.ts). Falls back to
+	// Desmos's demo key, which shows a "Trial Key" banner and is for development only.
 	import { onMount } from 'svelte';
-	import { env } from '$env/dynamic/public';
 
 	const DEMO_KEY = 'dcb31709b452b1cf9dc26972add0fda6';
 	const API = 'https://www.desmos.com/api/v1.11/calculator.js';
 
-	/** Changing this saves the current graph and swaps to the graph for the new key. */
-	let { stateKey }: { stateKey: string } = $props();
+	/** stateKey: changing it saves the current graph and swaps to the graph for the new key. */
+	let { stateKey, apiKey = null }: { stateKey: string; apiKey?: string | null } = $props();
 
 	let el: HTMLDivElement;
 	let calc: any = $state.raw();
@@ -22,7 +22,7 @@
 		if (w.Desmos) return Promise.resolve();
 		w.__desmosLoading ??= new Promise<void>((resolve, reject) => {
 			const s = document.createElement('script');
-			s.src = `${API}?apiKey=${env.PUBLIC_DESMOS_API_KEY || DEMO_KEY}`;
+			s.src = `${API}?apiKey=${encodeURIComponent(apiKey || DEMO_KEY)}`;
 			s.async = true;
 			s.onload = () => resolve();
 			s.onerror = () => reject(new Error('Desmos failed to load'));

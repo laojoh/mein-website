@@ -95,7 +95,7 @@ onMount(() => {
     
     <canvas bind:this={canvas} class="fixed inset-0 w-full h-full z-0"></canvas>
 
-    <section class="relative z-10 min-h-screen ...">
+    <section class="relative z-10 min-h-screen ..." style={`transform: translate(${x * 12}px, ${y * 12}px);`}>
         <a href="/projects/sat" class="group inline-block border-2 border-header bg-bg/80 p-6 max-w-md hover:bg-header hover:text-bg transition-colors">
             <div class="text-4xl font-header uppercase">SAT Math</div>
             <p class="font-subheader uppercase text-sm mt-2">596 question practice bank</p>
